@@ -1,0 +1,33 @@
+body {
+  font-family: 'Bai Jamjuree', sans-serif;
+}
+
+header {
+  text-align: center;
+}
+
+main {
+  display: flex;
+  align-items: flex-start;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+tr:nth-child(even) {
+  background-color: rgb(240, 240, 240);
+}
+
+th {
+  padding: 0 50px;
+}
+
+#options {
+  padding-right: 2em;
+}
+
+.results {
+  text-align: center;
+  flex-grow: 3;
+}

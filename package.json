@@ -1,0 +1,27 @@
+{
+  "name": "contact-list",
+  "version": "1.0.0",
+  "description": "browsable and sortable contact list for a medium-sized org",
+  "main": "dev.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/egomadking/contact-list.git"
+  },
+  "keywords": [
+    "contact",
+    "directory",
+    "phonebook"
+  ],
+  "author": "Roy Mosby",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/egomadking/contact-list/issues"
+  },
+  "homepage": "https://github.com/egomadking/contact-list#readme",
+  "dependencies": {
+    "vue": "^2.5.17"
+  }
+}
