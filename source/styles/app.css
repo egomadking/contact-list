@@ -1,5 +1,8 @@
 body {
   font-family: 'Bai Jamjuree', sans-serif;
+  display: flex;
+  flex-flow: column;
+  align-content: center;
 }
 
 header {
@@ -8,7 +11,8 @@ header {
 
 main {
   display: flex;
-  align-items: flex-start;
+  justify-content: space-between;
+  margin: auto;
 }
 
 table {

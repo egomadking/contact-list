@@ -23,5 +23,9 @@
   "homepage": "https://github.com/egomadking/contact-list#readme",
   "dependencies": {
     "vue": "^2.5.17"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^0.7.1",
+    "sass": "^1.15.3"
   }
 }
