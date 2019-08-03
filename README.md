@@ -1,5 +1,7 @@
 # contact-list
 
+## browsable, searchable phonebook project made with Vue.
+
 ## Project setup
 ```
 npm install
