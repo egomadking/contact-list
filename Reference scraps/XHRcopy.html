@@ -1,0 +1,1627 @@
+<style>
+  /*START SP page styles*/
+  #sideNavBox, #s4-ribbonrow {
+    display: none;
+  }
+  #contentBox {
+    margin-left: 5px;
+  }
+  
+  #s4-bodyContainer{
+    padding: 0;
+  }
+
+  #WebPartWPQ2,
+  #WebPartWPQ3X,
+  #WebPartWPQ4X,
+  #WebPartWPQ5X,
+  #webadmin-list,
+  .ms-wikicontent {
+    border: none;
+    padding: 0;
+  }
+  #entries-pane-titles {
+    font-weight: bold;
+    padding-left: 15px;
+  }
+  
+  /*END SP page styles*/
+  /*START phonebook styles*/
+  
+  /*START Header*/
+  
+  #phonebook-header > h1 {
+    font-weight: bold;
+    display: inline;
+    margin: auto;
+  }
+  
+  #phonebook-load-spinner {
+    font-size: 2em;
+    text-align: center;
+    position: relative;
+    height: 0;
+    top: 200px;
+  }
+  #phonebook-load-spinner div{
+    color: #fff;
+    background-color: #0072C6;
+    font-size: 1.2em;
+    font-weight: bold;
+    width: 200px;
+    margin: auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px 2px rgba(0, 0, 0, 0.3);
+}
+  
+  .is-loaded {
+    font-size: 0em;
+    opacity: 0;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out;
+    -ms-transform: scale(0);
+    transform: scale(0);
+  }
+
+  #top-options-buttons{
+    font-size: 1.2em;
+  }
+
+  #top-options-buttons > button{
+    font-size: 1.2em;
+    padding: 2px;
+    min-width: 180px;
+  }
+
+  #top-options-buttons > input{
+    width: 170px;
+  }
+  
+  /*END phonebook header*/
+  /*START phonebook wrapper*/
+  /*contains pane, pagination, alpha buttons*/
+  
+  #phonebook-wrapper,
+  #phonebook-header {
+    text-align: center;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in;
+  }
+  
+  /*START entry pane*/
+
+  #entries-pane, #filtered-entries-pane, #dir-entries-pane {
+    background-color: #eee;
+    max-height: 435px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    border: 1px solid #ddd;
+    width: 1020px;
+    margin: auto;
+    padding: 0;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+  
+  #entries-pane-titles > ul {
+    text-align: left;
+    list-style: none;
+    margin: auto;
+    padding: 10px 14px 0 0;
+    width: 1015px;
+  }
+  
+  .contact {
+    text-align: left;
+    list-style: none;
+    margin: 0 2px 2px 2px;
+    padding: 10px 2px;
+    width: 1015px;
+  }
+  
+  /* adds sub-directorate title to 1st entry of sub-dir */
+  /* for use in filter by directorate */
+  .contact.beginning::before {
+    background-color: #0072c6;
+    color: #fff;
+    content: "Chaplain";
+    display: block;
+    padding: 5px 15px;
+    font-size: 1.2em;
+    margin: 0 0 0 0 -5px;
+  }
+  
+  .contact:nth-child(even) {
+    background-color: #fff;
+  }
+
+  .contact:nth-child(odd) {
+    background-color: #eee;
+  }
+
+  .contact:last-of-type {
+    box-shadow: 0px 4px 2px #ccc;
+  }
+  
+  .contact:hover {
+    background-color: #e6f2fa;
+    outline: 1px solid #92c0e0;
+    
+  }
+  
+  .contact:active {
+    background-color: #92c0e0;
+    outline: 1px solid #92c0e0;
+    transform: scale(1.01);
+  }
+
+  .contact li,
+  #entries-pane-titles > ul > li {
+    display: inline-block;
+    width: 115px;
+  }
+
+  .contact li:nth-child(1),
+  .contact li:nth-child(4),
+  .contact li:nth-child(7),
+  #entries-pane-titles > ul > li:nth-child(1),
+  #entries-pane-titles > ul > li:nth-child(4),
+  #entries-pane-titles > ul > li:nth-child(7) {
+    width: 75px;
+  }
+  
+  .contact li:nth-child(3) {
+    font-weight: bold;
+  }
+
+  .contact li:nth-child(5),
+  .contact li:nth-child(6),
+  #entries-pane-titles > ul > li:nth-child(5),
+  #entries-pane-titles > ul > li:nth-child(6) {
+    width: 200px;
+  }
+  
+  #entries-pane-titles > ul > li:nth-child(7) {
+    text-align: left;
+  }
+  
+  #entries-pane > button {
+    margin-top: 4px;
+    box-shadow: 0px 2px 2px #ccc;
+  }
+  
+  /*END entries pane*/
+  /*START page/alpha buttons*/
+  
+  .page-numbers-row,
+  .alpha-buttons-row {
+    list-style: none;
+    font-size: 1.3em;
+    font-weight: bold;
+    padding: 2px;
+  }
+
+  .page-numbers-row li,
+  .alpha-buttons-row li {
+    box-shadow: 0px 2px 2px #ddd;
+    display: inline-block;
+    padding: 0;
+    margin: 2px;
+    text-align: center;
+  }
+  
+  .page-numbers-row button {
+    min-width: 40px;
+    margin: 0;
+  }
+
+  .btn-is-current {
+    border-radius: 2px;
+    border: none;
+    box-shadow: none;
+  }
+
+  .btn-is-current > button {
+    background-color: none;
+    border-radius: 3px;
+    border: 2px solid #eee;
+    color: #333;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .btn-is-current > button:active {
+    border: 1px solid #93abbd;
+    box-shadow: none;
+  }
+
+  .btn-is-current > button:hover,
+  .btn-is-current > button:active {
+    background-color: white;
+  }
+
+  .btn-is-current > button:focus {
+    outline: none;
+  }
+
+   /*specificity issue*/
+  .page-numbers-row .btn-is-ellipses {
+    border: none;
+    box-shadow: none;
+  }
+  .btn-is-ellipses button {
+    background-color: white;
+    border: none;
+    box-shadow: none;
+    pointer-events: none;
+    user-select: none;
+  }
+  
+  .alpha-buttons-row li {
+    margin: 1px;
+  }
+
+  /*specificity issue*/
+  .alpha-buttons-row .alpha-label{
+    font-size: 1em;
+    box-shadow: none;    
+  }
+  .alpha-buttons-row button {
+    min-width: 22px; /*SP override*/
+    width: 22px;
+    margin: 0;
+    padding: 2px 4px;
+  }
+
+  .alpha-buttons-row, .alpha-label {
+    font-size: 1em;
+    font-weight: normal;
+    box-shadow: none;
+    margin-bottom: 0
+  }
+
+  /*END page/alpha buttons*/
+  /*START contact modal*/
+
+  .contact-modal, .contact-modal * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .contact-modal hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(171, 182 ,193, 0.5), rgba(171, 182 ,193, 0.75), rgba(171, 182 ,193, 0.5));
+  }
+
+  .contact-info{
+    border-radius: 10px 50px 0 0;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 20px;
+    background-color: #376092;
+    color: #fff;
+    display: flex;
+    flex-flow: row nowrap;
+    font-size: 1.2em;
+    box-shadow: 0 2px 8px 2px rgba(0, 0, 0, 0.4);
+  }
+
+  .contact-info-details{
+    font-size: 1.4em;
+    padding: 10px;
+  }
+
+  .contact-info-personal{
+    max-width: 420px;
+    overflow-wrap: break-word;
+    display: flex;
+    flex-flow: row nowrap;
+  }
+
+  .contact-info-org{
+    font-size: .8em;
+    margin: 10px; 
+  }
+
+  .rank{
+    justify-content: center;
+    margin: 0 10px 0 10px;
+    padding-right: 10px;
+    border-right: 2px solid #59718f;
+  }
+
+  .contact-info-logo{
+    flex-grow: 0;
+    min-width: 100px;
+    width: 100px;
+    height: 100px;
+    margin: 10px 10px 0 10px;
+  }
+  
+  .contact-info-logo > img{
+    width: auto;
+    max-height: 100%;
+  }
+
+  .contact-info-details{
+    background-color:#2c4d75;
+    border-radius: 0 50px 0 0;
+    flex-grow: 2;
+    text-align: left;
+  }
+
+  .contact-channels{
+    display: flex;
+    flex-flow: row nowrap;
+    font-size: 1.2em;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  .secure{
+    border-radius: 0 0 10px 0;
+  }
+
+  .unsecure{
+    border-radius: 0 0 0 10px;
+  }
+
+  .unsecure, .secure{
+    flex-flow: 0;
+    width: 260px;
+    background-color: rgba(242, 242, 242, 0.7);
+    padding: 5px 10px;
+    box-shadow: 0 2px 8px 2px rgba(0, 0, 0, 0.3);
+  }
+  
+  .unsecure h3, .secure h3{
+    font-weight: bold;
+  }
+
+  .contact-channels ul{
+    list-style: none;
+    margin: auto;
+    text-align: left;
+  }
+
+  .contact-channels li:nth-child(2){
+    font-size: 0.7em;
+    word-wrap: break-word;
+  }
+
+  .contact-modal {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 1rem;
+    color: #0b2c54;
+    display: block;
+    width: 600px;
+    max-width: 100%;
+    min-height: 435px;
+    max-height: 100%;
+    position: fixed;
+    z-index: 1002; /*megamenu conflict @1000*/
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(220, 230, 242, 1);
+    /*BOOKMARK*/
+    /*work
+    background-image: url(/phonebook/SiteAssets1/images/MQ-9.jpeg);
+    */
+    /*personal*/
+    background-image: url(/SiteAssets/images/MQ-9.jpeg);
+    background-size: cover;
+    box-shadow: 0 0 60px 10px rgba(0, 0, 0, 0.9);
+    transition-duration: 0.5s;
+  }
+
+  .contact-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1001; /*megamenu conflict*/
+    transition-duration: 0.5s;
+    background: rgba(0, 0, 0, 0.6);
+  }
+  .contact-modal-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    padding: 20px 20px 5px 20px;
+    text-align: center;
+    background: rgba(220, 230, 242, 0.7);
+  }
+
+  .contact-modal-inner-edit{
+    background: rgba(220, 230, 242, 0.7);
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 2fr;
+    grid-template-columns: 1fr 2fr;
+    font-size: 1rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    padding: 10px 50px 5px 50px;
+    text-align: left;
+  }
+  
+  .contact-modal-inner-edit input{
+    width: 90%;
+  }
+  
+  .contact-modal-inner-edit > div{
+    margin-bottom: 4px;
+  }
+  
+  .contact-modal-inner-edit > div:last-child{
+    margin-bottom: 0;
+  }
+
+  .contact-modal .close-button {
+    min-width: 0; /*SP override*/
+    font-family: "Arial", sans-serif;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+    top:6px;
+    right:6px;
+    border: 1px solid #223b5a;
+    background-image: linear-gradient(#5686bf, #223b5a);
+    color: white;
+    padding: 1px 8px;
+    font-size: 1.5em;
+    box-shadow: 0 2px 8px 1px rgba(0, 0, 0, 0.3);
+  }
+
+  .contact-modal .close-button:hover{
+    background-image: linear-gradient(#3e6ca5, #142335);
+  }
+
+  .contact-modal .close-button:active{
+    background-image: linear-gradient(#7ba0cd, #30547f);
+  }
+
+  .edit-contact {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    border: 1px solid #223b5a;
+    border-radius: 5px;
+    font-size: 1.2em;
+    color: #fff;
+    background-image: linear-gradient(#5686bf, #223b5a);
+    margin: 0;
+    transition-duration: 0.05s;
+    padding: 10px;
+    width: 93.4%;
+    box-shadow: 0 2px 8px 1px rgba(0, 0, 0, 0.3);
+  }
+  
+  .edit-contact:hover {
+    background-image: linear-gradient(#3e6ca5, #142335);
+  }
+  .edit-contact:active {
+    background-image: linear-gradient(#7ba0cd, #30547f);
+  }
+  /* IE garbage for grid */
+  .col-1 {
+    -ms-grid-column: 1;
+    grid-column: 1;
+  }
+  .col-2 {
+    -ms-grid-column: 2;
+    grid-column: 2;
+  }
+
+  .row-1 {
+    -ms-grid-row: 1;
+    grid-row:1;
+  }
+  .row-2 {
+    -ms-grid-row: 2;
+    grid-row:2;
+  }
+  .row-3 {
+    -ms-grid-row: 3;
+    grid-row:3;
+  }
+  .row-4 {
+    -ms-grid-row: 4;
+    grid-row:4;
+  }
+  .row-5 {
+    -ms-grid-row: 5;
+    grid-row:5;
+  }
+  .row-6 {
+    -ms-grid-row: 6;
+    grid-row:6;
+  }
+  .row-7 {
+    -ms-grid-row: 7;
+    grid-row:7;
+  }
+  .row-8 {
+    -ms-grid-row: 8;
+    grid-row:8;
+  }
+  .row-9 {
+    -ms-grid-row: 9;
+    grid-row:9;
+  }
+  .row-10 {
+    -ms-grid-row: 10;
+    grid-row:10;
+  }
+  .row-11 {
+    -ms-grid-row: 11;
+    grid-row:11;
+  }
+  .row-12 {
+    -ms-grid-row: 12;
+    grid-row:12;
+  }
+  
+  .modalEditButtons{
+      font-size: 1.2rem;
+      -ms-grid-column-span: 2;
+      grid-column-start: 1;
+      grid-column-end: 3;
+      padding: 3px 0;
+      text-align: center;
+  }
+  
+  .confirm-update, .cancel-edit, .delete-contact{
+    border-radius: 5px;
+    box-shadow: 0 2px 8px 1px rgba(0, 0, 0, 0.3);
+    font-size: 1em;
+    padding: 10px;
+    transition-duration: 0.05s;
+  } 
+  
+  .confirm-update {
+    color: #fff;
+    background-image: linear-gradient(#5686bf, #223b5a);
+  }
+  .confirm-update:hover {
+    background-image: linear-gradient(#3e6ca5, #142335);
+  }
+  .confirm-update:active {
+    background-image: linear-gradient(#7ba0cd, #30547f);
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
+  .confirm-update:focus {
+    border: 1px solid #0d1723;
+  }
+  
+  .cancel-edit{
+    background-image: linear-gradient(whitesmoke, darkgray);
+  }
+  .cancel-edit:hover {
+    background-image: linear-gradient(gainsboro, #8f8f8f);
+  }
+  .cancel-edit:active {
+    background-image: linear-gradient(white, #c2c2c2);
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
+  
+  .delete-contact {
+    background-image: linear-gradient(#ff8983, #e90d00);
+    color: #fff;
+    margin-right: 50px;
+  }
+  .delete-contact:hover {
+    background-image: linear-gradient(#ff5950, #b60a00);
+  }
+  .delete-contact:active {
+    background-image: linear-gradient(#ffbab6, #ff291d);
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
+  .delete-contact:focus {
+    border: 1px solid #9c0900;
+  }
+  
+  .contact-modal-edit-title{
+    position: absolute;
+    top: 10px;
+    margin-left: 15px;
+  }
+
+  .more-info{
+    display: inline-block;
+    width: 28px;
+    text-align: center;
+  }
+  .more-info:hover{
+    transform: scale(1.3);
+    transition-duration: 0.2s;
+  }
+  
+  .more-info:hover::before {
+    content: "";
+    padding:  0;
+    position: absolute;
+    border: 8px solid white;
+    margin: 0;
+    top: 26px;
+    left: 6px;
+    transform: rotate(45deg);
+    z-index: 1;
+  }
+  
+  .more-info:hover::after{
+    content: "Auto-complete field. To change, first delete content in field then type in a new directorate or wing.";
+    box-shadow: 0 2px 8px 1px rgba(0, 0, 0, 0.3);
+    top: 30px;
+    left: -15px;
+    font-size: .9em;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    position: absolute;
+    width: 250px;
+  }
+  
+  .clear-input {
+    font-family: "Arial", sans-serif;
+    font-size: 1em;
+    min-width: 0; /*SP override*/
+    border-radius: 50%;
+    border: 0;
+    background-color: #a6a6a6;
+    padding: 1px 6px;
+    box-shadow: 0 2px 8px 1px rgba(0, 0, 0, 0.2)
+  }
+  
+  .clear-input:hover{
+    background-color: #ff9a94;
+    transition-duration: 0.2s;
+  }
+
+  .clear-input:focus{
+    outline-color: rgba(255,255,255, 0.1);
+  }
+  
+  .closed {
+    display: none;
+    background: rgba(0, 0, 0, 0);
+  }
+  
+  .hidden{
+    opacity: 0;
+  }
+  
+  /*END contact modal*/
+  /*START VUE.JS transition styles*/
+  
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .2s;
+  }
+  .fade-enter, .fade-leave-to {
+    opacity: 0;
+  }
+
+/*reserved for options fields*/
+  .scale-enter-active, .scale-leave-active {
+  transition: opacity .5s;
+  }
+  .scale-enter, .scale-leave-to {
+  opacity: 0;
+  }
+
+  /*END VUE.JS transition styles*/
+  /*END phonebook styles*/
+</style>
+
+<div id="phonebook-header">
+  <h1>USAFCENT Phonebook</h1>
+  <div id="phonebook-load-spinner">
+    <div>Loading...</div>
+  </div>
+</div>
+
+<div id="phonebook-wrapper" class="hidden">
+  <div id="top-options">
+    <div id="top-options-buttons">
+      <button type="button" v-on:click="lookup = !lookup, byDirectorate = false, filteredEntries=''">Lookup</button>
+
+      <input type="text" autocomplete="off" v-if="lookup" v-on:keydown.enter.prevent v-on:keyup="filterEntries">
+
+      <button type="button" v-on:click="byDirectorate = !byDirectorate, lookup = false, filteredEntries=''">Filter by
+        Directorate</button>
+
+      <select list="directorates" v-if="byDirectorate" v-on:change="filterByDirectorate">
+        <option disabled value="">Choose a directorate/wing</option>
+        <option v-for="dir in findDirectorates">{{ dir }}</option>
+      </select>
+
+      <button type="button" v-on:click="addContact">Create New</button>
+    </div>
+  </div>
+  <div id="entries-pane-titles">
+    <ul>
+      <li>Rank</li>
+      <li>First Name</li>
+      <li>Last Name</li>
+      <li>DSN</li>
+      <li>NIPR Email</li>
+      <li>Position</li>
+      <li>Directorate or Wing</li>
+      <li>Sub-directorate</li>
+    </ul>
+  </div>
+  <div id="entries-pane" v-if="!lookup && !byDirectorate">
+    <ul class="contact" v-for="entry in paginateEntries" v-on:click="openModal(entry.absoluteIndex)">
+      <li>{{ entry.rank }}</li>
+      <li>{{ entry.firstName }}</li>
+      <li>{{ entry.lastName }}</li>
+      <li>{{ entry.DSN }}</li>
+      <li>{{ entry.NIPR_email }}</li>
+      <li>{{ entry.position }}</li>
+      <li>{{ entry.directorate }}</li>
+      <li>{{ entry.sub_x002d_directorate }}</li>
+    </ul>
+    <button type="button" v-if="currentPage > 1" v-on:click="backPage">
+      &lt Previous
+    </button>
+    <button type="button" v-if="currentPage < numPages" v-on:click="nextPage">
+      Next &gt
+    </button>
+  </div>
+
+  <div id="filtered-entries-pane" v-if="lookup">
+    <ul class="contact" v-for="entry in filteredEntries" v-on:click="openModal(entry.absoluteIndex)">
+      <li>{{ entry.rank }}</li>
+      <li>{{ entry.firstName }}</li>
+      <li>{{ entry.lastName }}</li>
+      <li>{{ entry.DSN }}</li>
+      <li>{{ entry.NIPR_email }}</li>
+      <li>{{ entry.position }}</li>
+      <li>{{ entry.directorate }}</li>
+      <li>{{ entry.sub_x002d_directorate }}</li>
+    </ul>
+
+  </div>
+
+  <div id="dir-entries-pane" v-if="byDirectorate">
+    <ul class="contact" v-for="entry in filteredEntries" v-on:click="openModal(entry.absoluteIndex)">
+      <li>{{ entry.rank }}</li>
+      <li>{{ entry.firstName }}</li>
+      <li>{{ entry.lastName }}</li>
+      <li>{{ entry.DSN }}</li>
+      <li>{{ entry.NIPR_email }}</li>
+      <li>{{ entry.position }}</li>
+      <li>{{ entry.directorate }}</li>
+      <li>{{ entry.sub_x002d_directorate }}</li>
+    </ul>
+  </div>
+
+  <!-- <div id="lookup-pane"> -->
+  <div id="pagination" v-if="!lookup && !byDirectorate">
+    <ul class="page-numbers-row">
+      <li>
+        <button type="button" v-if="currentPage > 1" v-on:click="backPage">
+          &lt Previous
+        </button>
+      </li>
+      <li v-for="pageButton in createPageButtons" v-bind:class="{'btn-is-current':(pageButton === currentPage), 'btn-is-ellipses':(pageButton==='...')}">
+        <button type="button" v-on:click="changePage(pageButton)">
+          {{ pageButton }}
+        </button>
+      </li>
+      <li>
+        <button type="button" v-if="currentPage < numPages" v-on:click="nextPage">
+          Next >
+        </button>
+      </li>
+    </ul>
+    <ul class="alpha-buttons-row">
+      <li class="alpha-label">Skip to:</li>
+      <li v-for="alphaButton in createAlphaButtons">
+        <button type="button" v-on:click="skipToAlpha(alphaButton)">
+          {{ alphaButton }}
+        </button>
+      </li>
+    </ul>
+  </div>
+  <transition name="fade">
+    <div class="contact-modal-overlay" id="contact-modal-overlay" v-if="modalOpen" v-on:click="cancelModalByOverlay"></div>
+  </transition>
+  <transition name="fade">
+    <div class="contact-modal" id="contact-modal" v-if="modalOpen">
+      <button type="button" class="close-button" id="close-button" v-on:click="cancelModal">&#215;</button>
+
+      <transition name="fade">
+        <div class="contact-modal-inner" v-if="!modalEditMode">
+
+          <div class="contact-info">
+            <div class="contact-info-logo">
+              <img v-bind:src="chooseLogo(modalEntry.directorate)"></img>
+            </div>
+            <div class="contact-info-details">
+              <div class="contact-info-personal">
+                <div class="rank">{{ modalEntry.rank }}</div>
+                <div>
+                  <span>{{ modalEntry.firstName }}</span>
+                  <span>"Callsign"</span>
+                  <span>{{ modalEntry.lastName }}</span>
+                </div>
+              </div>
+              <div class="contact-info-org">
+                <hr />
+                <span>{{ modalEntry.sub_x002d_directorate }}</span><br />
+                <span>{{ modalEntry.position }}</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-channels">
+            <div class="unsecure">
+              <h3>NIPR</h3>
+              <hr />
+              <ul>
+                <li>{{ modalEntry.DSN }}</li>
+                <li><a v-bind:href="'mailto:'+ modalEntry.NIPR_email">{{ modalEntry.NIPR_email }}</a></li>
+              </ul>
+            </div>
+            <div class="secure">
+              <h3>SIPR</h3>
+              <hr />
+              <ul>
+                <li>{{ modalEntry.VOSIP }}</li>
+                <li>{{ modalEntry.SIPR_email }}</li>
+              </ul>
+            </div>
+          </div>
+
+          <button class="edit-contact" type="button" v-on:click="editModal">Edit contact</button>
+        </div>
+      </transition>
+      <transition name="fade">
+        <div class="contact-modal-inner-edit" v-if="modalEditMode">
+          <div class="col-1 row-1"><span>Rank: </span></div>
+          <div class="col-2 row-1">
+            <select v-model="modalEntry.rank">
+              <option disabled value="">Select rank: </option>
+              <option v-for="rank in ranks" v-bind:value="rank">{{ rank }}</option>
+            </select></div>
+          <div class="col-1 row-2"><span>First Name: </span></div>
+          <div class="col-2 row-2">
+            <input type="text" autocomplete="off" v-model="modalEntry.firstName" v-on:keydown.enter.prevent>
+          </div>
+          <div class="col-1 row-3"><span>Callsign:</span></div>
+          <div class="col-2 row-3"><span> placeholder</span></div>
+          <div class="col-1 row-4"><span>Last Name: </span></div>
+          <div class="col-2 row-4"><input v-model="modalEntry.lastName" v-on:keydown.enter.prevent></div>
+          <div class="col-1 row-5"><span>Position: </span></div>
+          <div class="col-2 row-5"><input v-model="modalEntry.position" v-on:keydown.enter.prevent></div>
+
+          <div class="col-1 row-6"><span>Directorate:&nbsp;&nbsp;&nbsp;</span>
+            <div class="more-info">&#8505;</div>
+          </div>
+          <div class="col-2 row-6">
+            <input type="text" list="dirs" v-model="modalEntry.directorate" v-on:keydown.enter.prevent>
+            <datalist id="dirs">
+              <option v-for="dir in findDirectorates">{{ dir }}</option>
+            </datalist>
+            <button type="button" class="clear-input" v-on:click="(modalEntry.directorate = '', modalEntry.sub_x002d_directorate = '')">&#215;</button>
+          </div>
+
+          <div class="col-1 row-7"><span>Sub-directorate: </span></div>
+          <div class="col-2 row-7">
+            <input type="text" list="sub-dirs" v-model="modalEntry.sub_x002d_directorate" v-on:keydown.enter.prevent>
+            <datalist id="sub-dirs">
+              <option v-for="sub in findSubDir(modalEntry.directorate)">{{ sub }}</option>
+            </datalist>
+            <button type="button" class="clear-input" v-on:click="modalEntry.sub_x002d_directorate = ''">&#215;</button>
+          </div>
+
+          <div class="col-1 row-8"><span>DSN: </span></div>
+          <div class="col-2 row-8"><input autocomplete="off" v-model="modalEntry.DSN" v-on:keydown.enter.prevent></div>
+          <div class="col-1 row-9"><span>NIPR email: </span></div>
+          <div class="col-2 row-9"><input autocomplete="off" input v-model="modalEntry.NIPR_email"
+              v-on:keydown.enter.prevent></div>
+          <div class="col-1 row-10"><span>VOSIP: </span></div>
+          <div class="col-2 row-10"><input autocomplete="off" input v-model="modalEntry.VOSIP"
+              v-on:keydown.enter.prevent></div>
+          <div class="col-1 row-11"><span>SIPR email: </span></div>
+          <div class="col-2 row-11"><input autocomplete="off" input v-model="modalEntry.SIPR_email"
+              v-on:keydown.enter.prevent></div>
+          <div class="modalEditButtons row-12">
+
+            <button v-if="!addNew" type="button" class="delete-contact" v-on:click="deleteContact(modalEntry)">Delete
+              contact</button>
+            <button v-if="!addNew" type="button" class="cancel-edit" v-on:click="cancelEdit(modalEntry.absoluteIndex)">Cancel
+              edit</button>
+            <button v-if="!addNew" type="button" class="confirm-update" v-on:click="submitModalEdit(modalEntry)">Confirm
+              update</button>
+
+            <button v-if="addNew" type="button" class="cancel-edit" v-on:click="cancelNew">Cancel</button>
+            <button v-if="addNew" type="button" class="confirm-update" v-on:click="submitNew(modalEntry)">Confirm New
+              Contact</button>
+          </div>
+        </div>
+      </transition>
+    </div>
+  </transition>
+</div>
+
+<!-- BOOKMARK -->
+<!-- home -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.22/dist/vue.js"></script>
+<script src="https://roymosby.sharepoint.com/SiteAssets/scripts/anime.min.js"></script>
+
+<!-- work
+<script src="https://portal.afcent.af.mil/phonebook/SiteAssets1/vue.js"></script>
+<script src="https://portal.afcent.af.mil/phonebook/SiteAssets1/anime.min.js"></script>
+-->
+
+<script data-name="async-calls">
+  // loads JS file containing RequestExecutor
+  ExecuteOrDelayUntilScriptLoaded(function () {
+    var script =
+      _spPageContextInfo.siteAbsoluteUrl + '/_layouts/15/SP.RequestExecutor.js';
+    var scriptTag = document.createElement('script');
+    scriptTag.src = script;
+    scriptTag.id = 'RequestExecutor';
+    var insertPoint = document.getElementById('s4-workspace');
+    insertPoint.appendChild(scriptTag);
+  }, 'sp.js');
+
+  //BOOKMARK
+  //environmental variables
+  //var listGuid = "\(guid'1f0e91dd-ae82-47d9-8508-9c09aaf9b79f'\)"; //work
+  var listGuid = "\(guid'019e8eed-4efb-402f-86ac-a37f6b038c7d'\)"; //personal
+  var baseUrl = _spPageContextInfo.webAbsoluteUrl;
+
+  // setup variables
+  var urlSuffix = '/_api/web/lists';
+  var listUrl = baseUrl + urlSuffix + listGuid;
+  var fields =
+    '/items?$top=1000&$select=DSN,EditorId,Modified,' +
+    'NIPR_email,SIPR_email,VOSIP,directorate,firstName,' +
+    'lastName,position,rank,sub_x002d_directorate,unit';
+  var fullGetUrl = listUrl + fields;
+  var getListInfoResponse;
+  var phoneBookArray = [];
+
+  function getListInfo(url, methodType, callback, body) {
+    var xhr = new XMLHttpRequest();
+    xhr.open(methodType, url);
+    xhr.setRequestHeader('accept', 'application/json;odata=verbose');
+    xhr.setRequestHeader('content-type', 'application/json;odata=verbose');
+    xhr.addEventListener('error', transferFailed);
+    xhr.send(body || '');
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+          getListInfoResponse = JSON.parse(xhr.response);
+          callback(getListInfoResponse);
+        } else {
+          // xhr failure
+        }
+      } else {
+        // xhr not complete
+      }
+    };
+  }
+
+  function processGetResponse(data) {
+    phoneBookArray = phoneBookArray.concat(getListInfoResponse.d.results);
+    if (getListInfoResponse.d.__next) {
+      var next = getListInfoResponse.d.__next;
+      getListInfo(next, 'GET', processGetResponse);
+    } else {
+      sortPhonebook(phoneBookArray);
+    }
+  }
+
+  function sortPhonebook(array) {
+    array.sort(function (a, b) {
+      var lastA = a.lastName.toUpperCase();
+      var lastB = b.lastName.toUpperCase();
+      if (lastA < lastB) {
+        return -1;
+      }
+      if (lastA > lastB) {
+        return 1;
+      } else {
+        var firstA = a.firstName.toUpperCase();
+        var firstB = a.firstName.toUpperCase();
+        if (firstA < firstB) {
+          return -1;
+        }
+        if (firstA > firstB) {
+          return 1;
+        } else {
+          return 0;
+        }
+      }
+    });
+    phoneBookArray.forEach(function (entry, index) {
+      entry.absoluteIndex = index;
+      for (detail in entry) {
+        if (entry[detail] === null) {
+          entry[detail] = '-';
+        }
+      }
+    });
+    loadPhonebook(phoneBookArray);
+  }
+
+  function transferFailed(event) {
+    if (phoneBookArray.length > 1) {
+      alert(
+        "There was a problem with loading the phonebook data. " +
+        "Entries may be missing. Please refresh page " +
+        "or try again later."
+      );
+      loadPhonebook(phoneBookArray);
+    } else {
+      alert(
+        "The phonebook data was unable to load. " +
+        "Please refresh or try again later"
+      );
+      var wrapper = document.getElementById("phonebook-wrapper");
+      wrapper.remove();
+      var header = document.getElementById("phonebook-header");
+      var error =
+        '<h1 style="font-size: 4em;">Unable to load AFCENT Phonebook at this time. Please try again later.</h1>'
+      header.insertAdjacentHTML('beforeend', error)
+    }
+  }
+
+  function setListItemEntityTypeFullName(data) {
+    listItemEntityTypeFullName = data.ListItemEntityTypeFullName;
+  }
+
+  function loadPhonebook(array) {
+    var loaderSpinner = document.querySelector('#phonebook-load-spinner');
+    loaderSpinner.classList.add('is-loaded');
+    array.forEach(function (entry) {
+      v1.entries.push(entry);
+    });
+  }
+
+  getListInfo(fullGetUrl, 'GET', processGetResponse);
+</script>
+<script data-name="app">
+  //TODO: success notification
+  //TODO: refactor styles
+  //TODO: top button+field animations (having problem with width animation)
+  //TODO: enable editing, deleting for new entries (no uri on __metadata yet)
+  //IDEA: flash first entry of letter skipped to
+  //IDEA: Create new shows pre-existing list by last name
+  //
+
+  var v1 = new Vue({
+    el: '#phonebook-wrapper',
+    data: {
+      entries: [],
+      filteredEntries: [],
+      pageSize: 50,
+      currentPage: 1,
+      numPages: 1,
+      loaded: false,
+      modalEntry: '',
+      modalOpen: false,
+      modalEditMode: false,
+      addNew: false,
+      lookup: false,
+      lookupString: '',
+      byDirectorate: false,
+      ranks: [
+        "GAF",
+        "Gen",
+        "Lt Ge",
+        "Maj G",
+        "Brig",
+        "Col",
+        "Lt Co",
+        "Maj",
+        "Capt",
+        "1st L",
+        "2d Lt",
+        "CMSAF",
+        "CCM",
+        "CMSgt",
+        "SMSgt",
+        "MSgt",
+        "TSgt",
+        "SSgt",
+        "SrA",
+        "A1C",
+        "Amn",
+        "AB",
+        "Mr.",
+        "Ms.",
+        "DoD Civ",
+        "Ctr"
+      ],
+      metadataType: '',
+    },
+    computed: {
+      paginateEntries: function () {
+        var current = this.currentPage;
+        var size = this.pageSize;
+        var paginatedArray = [];
+        for (var i = current * size - size; i < current * size; i++) {
+          if (!this.entries[i]) {
+            return paginatedArray;
+          }
+          paginatedArray.push(this.entries[i]);
+        }
+        return paginatedArray;
+      },
+      createPageButtons: function () {
+        var current = this.currentPage;
+        this.numPages = Math.ceil(this.entries.length / this.pageSize);
+        var numPages = this.numPages;
+        var numButtons = 15;
+        var buttons = [];
+
+        if (numPages <= 15) {
+          for (var i = 0; i < numPages; i++) {
+            buttons.push(i + 1);
+          }
+          return buttons;
+        }
+        //if number of pages greater than 15
+        else {
+          if (current <= 8) {
+            for (var i = 0; i < 13; i++) {
+              buttons.push(i + 1);
+            }
+            buttons.push('...');
+            buttons.push(numPages);
+            return buttons;
+          }
+          //if the current page is higher than 8
+          else {
+            //also if current page is not coming up on the end of pages
+            if (current < numPages - 7) {
+              //changed from 7
+              buttons.push(1);
+              buttons.push('...');
+              for (var i = 0; i < 11; i++) {
+                buttons.push(current + i - 5);
+              }
+              buttons.push('...');
+              buttons.push(numPages);
+              return buttons;
+            }
+            //current page coming up on end of pages
+            else {
+              buttons.push(1);
+              buttons.push('...');
+              for (var i = 0; i < 13; i++) {
+                buttons.push(numPages + i - 12);
+              }
+              return buttons;
+            }
+          }
+        }
+      },
+      createAlphaButtons: function () {
+        var alpha = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        var a = alpha.split('');
+        return a;
+      },
+      findDirectorates: function () {
+        var dirSet = new Set();
+        var dirArray = [];
+        this.entries.forEach(function (e) {
+          dirSet.add(e.directorate);
+        });
+        dirSet.forEach(function (e) {
+          dirArray.push(e);
+        });
+        return (dirArray.sort());
+      },
+    },
+    methods: {
+      changePage: function (page) {
+        if (page != '...') {
+          this.currentPage = page;
+          var pane = document.getElementById('entries-pane');
+          scrollPane(pane, 0);
+        }
+      },
+      nextPage: function () {
+        if (this.currentPage < this.numPages) {
+          this.currentPage++;
+          var pane = document.getElementById('entries-pane');
+          scrollPane(pane, 0);
+        }
+      },
+      backPage: function () {
+        if (this.currentPage > 1) {
+          this.currentPage--;
+          var pane = document.getElementById('entries-pane');
+          scrollPane(pane, 0);
+        }
+      },
+      skipToAlpha: function (letter) {
+        var len = this.entries.length;
+        var regex = new RegExp('^' + letter);
+        var itemNum; //number of item- not index
+        for (var i = 0; i < this.entries.length; i++) {
+          var found = this.entries[i].lastName.search(regex);
+          if (found > -1) {
+            itemNum = i + 1;
+            break;
+          } else {
+            //itemNum = 1;
+          };
+        };
+        if (!itemNum) {
+          alert("That letter is not found in the phonebook");
+          return;
+        };
+        this.currentPage = Math.ceil(itemNum / this.pageSize);
+        var pageLen = this.paginateEntries.length;
+        var itemNumOnPage = Math.ceil(itemNum % this.pageSize);
+        var pane = document.getElementById('entries-pane');
+        var overflowY = pane.scrollHeight;
+        var currPos = pane.scrollTop;
+        var targetPos = Math.round(overflowY / pageLen) * (itemNumOnPage - 3);
+        if (targetPos < 0) {
+          targetPos = 0;
+        };
+        scrollPane(pane, targetPos);
+      },
+      openModal: function (index) {
+        this.modalOpen = true;
+        this.modalEntry = JSON.parse(JSON.stringify(this.entries[index]));
+      },
+      cancelModal: function (index) {
+        this.modalOpen = false;
+        this.modalEditMode = false;
+        this.addNew = false;
+        modalEntry = []; //I bet "" would work too...
+      },
+      cancelModalByOverlay: function () {
+        if (!this.modalEditMode) {
+          this.cancelModal();
+        };
+      },
+      editModal: function () {
+        this.modalEditMode = true;
+      },
+      cancelEdit: function (index) {
+        this.modalEntry = JSON.parse(JSON.stringify(this.entries[index]));
+        this.modalEditMode = false;
+      },
+      submitModalEdit: function (contact) {
+        //This will error on new entries that get edited
+        //Vue not reactive to JSON.parse(JSON stringify... 
+        this.modalEditMode = false;
+        var old = this.entries[contact.absoluteIndex];
+        var submissionBody = {
+          __metadata: {
+            type: 'SP.Data.DummyPhonebookListItem',
+          }
+        }
+        if (contact.DSN !== old.DSN) {
+          submissionBody.DSN = contact.DSN;
+          old.DSN = contact.DSN;
+        };
+        if (contact.NIPR_email !== old.NIPR_email) {
+          submissionBody.NIPR_email = contact.NIPR_email;
+          old.NIPR_email = contact.NIPR_email;
+        };
+        if (contact.SIPR_email !== old.SIPR_email) {
+          submissionBody.SIPR_email = contact.SIPR_email;
+          old.SIPR_email = contact.SIPR_email;
+        };
+        if (contact.VOSIP !== old.VOSIP) {
+          submissionBody.VOSIP = contact.VOSIP;
+          old.VOSIP = contact.VOSIP;
+        };
+        if (contact.directorate !== old.directorate) {
+          submissionBody.directorate = contact.directorate;
+          old.directorate = contact.directorate;
+        };
+        if (contact.firstName !== old.firstName) {
+          submissionBody.firstName = contact.firstName;
+          old.firstName = contact.firstName;
+        };
+        if (contact.lastName !== old.lastName) {
+          submissionBody.lastName = contact.lastName;
+          old.lastName = contact.lastName;
+        };
+        if (contact.position !== old.position) {
+          submissionBody.position = contact.position;
+          old.position = contact.position;
+        };
+        if (contact.rank !== old.rank) {
+          submissionBody.rank = contact.rank;
+          old.rank = contact.rank;
+        };
+        if (contact.sub_x002d_directorate !== old.sub_x002d_directorate) {
+          submissionBody.sub_x002d_directorate = contact.sub_x002d_directorate;
+          old.sub_x002d_directorate = contact.sub_x002d_directorate;
+        };
+        if (contact.unit !== old.unit) {
+          submissionBody.unit = contact.unit;
+          old.unit = contact.unit;
+        };
+        var submission = {
+          url: contact.__metadata.uri,
+          method: 'POST',
+          body: JSON.stringify(submissionBody),
+          headers: {
+            'IF-MATCH': '*',
+            'X-HTTP-Method': 'MERGE',
+            accept: 'application/json;odata=verbose',
+            'content-type': 'application/json;odata=verbose',
+          },
+          success: function (e) {},
+          error: function () {
+            alert("Update failed. Please try editing again.");
+          },
+        };
+        var request = new SP.RequestExecutor(baseUrl);
+        request.executeAsync(submission);
+        //this.entries[contact.absoluteIndex] = JSON.parse(JSON.stringify(v1.modalEntry));
+        this.modalOpen = false;
+        this.alphabetizeContacts();
+        this.entries.forEach(function (e, i) {
+          e.absoluteIndex = i;
+        });
+      },
+      deleteContact: function (contact) {
+        //This will error on new entries that get edited
+        var rank = contact.rank;
+        var name = contact.firstName + " " + contact.lastName;
+        var message = "Are you sure you wish to delete " + rank + " " + name +
+          "from the AFCENT phonebook?";
+        if (confirm(message)) {
+          this.modalEditMode = false;
+          this.modalOpen = false;
+          var submission = {
+            url: contact.__metadata.uri + "/recycle",
+            method: 'POST',
+            headers: {
+              accept: 'application/json;odata=verbose',
+              'content-type': 'application/json;odata=verbose',
+            },
+            success: function () {
+              console.log(this)
+            },
+            error: function () {
+              alert("Request failed. Please try deleting again.");
+            },
+          };
+          var request = new SP.RequestExecutor(baseUrl);
+          request.executeAsync(submission);
+          this.entries.splice(contact.absoluteIndex, 1);
+          this.entries.forEach(function (e, i) {
+            e.absoluteIndex = i;
+          });
+        };
+
+      },
+      addContact: function () {
+        var template = {
+          DSN: "",
+          NIPR_email: "",
+          SIPR_email: "",
+          VOSIP: "",
+          absoluteIndex: this.entries.length,
+          directorate: "",
+          firstName: "",
+          lastName: "",
+          position: "",
+          rank: "",
+          sub_x002d_directorate: "",
+          unit: "",
+          __metadata: {
+            type: this.entries[0].__metadata.type,
+          }
+        };
+        this.modalEntry = JSON.parse(JSON.stringify(template));
+        this.addNew = true;
+        this.modalEditMode = true;
+        this.modalOpen = true;
+      },
+      cancelNew: function () {
+        this.modalOpen = false;
+        this.modalEditMode = false;
+        this.addNew = false;
+        this.modalEntry = [];
+      },
+      submitNew: function (contact) {
+        var submissionBody = JSON.parse(JSON.stringify(contact));
+        var contactForView = JSON.parse(JSON.stringify(contact));
+        //no absoluteIndex in phonebook columns. Needs deleted
+        delete submissionBody.absoluteIndex;
+        var submission = {
+          url: listUrl + "/items",
+          method: 'POST',
+          body: JSON.stringify(submissionBody),
+          headers: {
+            'content-type': 'application/json;odata=verbose',
+            accept: 'application/json;odata=verbose',
+          },
+          success: function (evt) {
+            // update target entry with JSON.parse
+            // evt.body, .d.__metadata
+          },
+          error: function (evt) {},
+        };
+
+        var request = new SP.RequestExecutor(baseUrl);
+        request.executeAsync(submission);
+        this.entries.push(contactForView);
+        //fill in blanks with "-"
+        this.modalOpen = false;
+        this.modalEditMode = false;
+        this.addNew = false;
+        this.modalEntry = [];
+        this.alphabetizeContacts();
+        this.entries.forEach(function (e, i) {
+          e.absoluteIndex = i;
+        });
+      },
+      findSubDir: function (dir) {
+        var subDirSet = new Set();
+        var subDirArray = [];
+        this.entries.forEach(function (e) {
+          if (e.directorate === dir) {
+            subDirSet.add(e.sub_x002d_directorate)
+          };
+        });
+        subDirSet.forEach(function (e) {
+          subDirArray.push(e);
+        });
+        return (subDirArray.sort());
+      },
+      chooseLogo: function (dir) {
+        //BOOKMARK
+        //var url = baseUrl + "/siteAssets1/images/"
+        var url = baseUrl + "/SiteAssets/images/"
+        var img;
+        switch (dir) {
+          case "A1":
+            img = "A1.png";
+            break;
+          case "A2":
+            img = "A2.png";
+            break;
+          case "A3":
+            img = "A3.png";
+            break;
+          case "A4":
+            img = "A4.png";
+            break;
+          case "A5":
+            img = "A5.png";
+            break;
+          case "A6":
+            img = "A6.png";
+            break;
+          case "A7":
+            img = "A7.png";
+            break;
+          case "A1":
+            img = "A1.png";
+            break;
+          case "332 AEW":
+            img = "332_AEW.png";
+            break;
+          case "379 AEW":
+            img = "379_AEW.png";
+            break;
+          case "380 AEW":
+            img = "380_AEW.png";
+            break;
+          case "386 AEW":
+            img = "386_AEW.png";
+            break;
+          case "432 AEW":
+            img = "432_AEW.png";
+            break;
+          case "455 AEW":
+            img = "455_AEW.png";
+            break;
+          case "609 AOC":
+            img = "609 AOC.png";
+            break;
+          case "CAOC":
+            img = "CAOC.png";
+            break;
+          default:
+            img = "AFCENT_coin150x150.png"
+        };
+        return url + img;
+      },
+      filterEntries: function (evt) {
+        var str = evt.target.value;
+        if (str.length >= 2) {
+          this.filteredEntries = this.entries.filter(function (e) {
+            return e.lastName.toLowerCase().indexOf((str).toLowerCase()) > -1;
+          });
+        };
+      },
+      filterByDirectorate: function (evt) {
+        var str = evt.target.value;
+        var dirs = this.entries.filter(function (e) {
+          return e.directorate.toLowerCase().indexOf((str).toLowerCase()) > -1;
+        });
+        this.filteredEntries = JSON.parse(JSON.stringify(dirs));
+        this.filteredEntries.sort(function (a, b) {
+          var entryA = a.sub_x002d_directorate;
+          var entryB = b.sub_x002d_directorate;
+          if (entryA < entryB) {
+            return -1;
+          }
+          if (entryA > entryB) {
+            return 1;
+          } else {
+            return 0;
+          }
+        });
+        var pane = document.getElementById('dir-entries-pane');
+        scrollPane(pane, 0);
+      },
+      alphabetizeContacts: function () {
+        this.entries.sort(function (a, b) {
+          var lastA = a.lastName.toUpperCase();
+          var lastB = b.lastName.toUpperCase();
+          if (lastA < lastB) {
+            return -1
+          };
+          if (lastA > lastB) {
+            return 1
+          } else {
+            firstA = a.firstName.toUpperCase();
+            firstB = b.firstName.toUpperCase();
+            if (firstA < firstB) {
+              return -1;
+            };
+            if (firstA > firstB) {
+              return 1;
+            };
+          };
+        });
+      },
+    },
+    mounted: function () {
+      window.setTimeout(function () {
+        revealApp();
+      }, 2000);
+    }
+  });
+
+  function revealApp() {
+    var vueApp = document.querySelector('#phonebook-wrapper');
+    vueApp.classList.remove('hidden');
+  }
+
+  function scrollPane(element, target) {
+    var start = element.scrollTop;
+    anime({
+      targets: element,
+      scrollTop: [start, target],
+      easing: 'easeOutQuad',
+      duration: 350
+    });
+  }
+  var testResponse;
+</script>
