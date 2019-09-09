@@ -1,8 +1,8 @@
 # contact-list
 
-## browsable, searchable phonebook project made with Vue.
+## browsable, searchable phonebook project made with Vue
 
-### Uses [Vue](https://vuejs.org/), [Vue CLI](https://cli.vuejs.org/) and stores data at [jsonbin](https://jsonbin.org/).
+### Uses [Vue](https://vuejs.org/), [Vue CLI](https://cli.vuejs.org/) and stores data at [jsonbin](https://jsonbin.org/)
 
 _For the time being, the json file containing the phonebook data is loaded through [jsonbin](https://jsonbin.org/). Authentication is through username and API key (Not a good setup, I know! This will change as I figure out authentication.) which is not stored in the project repo. An initial dataset will load from the site but in order to save changes to the phonebook, you must create an account with jsonbin. The app will not store any credentialling, nor does it get passed anywhere except jsonbin._
 
