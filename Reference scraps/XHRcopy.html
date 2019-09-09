@@ -1,13 +1,15 @@
 <style>
   /*START SP page styles*/
-  #sideNavBox, #s4-ribbonrow {
+  #sideNavBox,
+  #s4-ribbonrow {
     display: none;
   }
+
   #contentBox {
     margin-left: 5px;
   }
-  
-  #s4-bodyContainer{
+
+  #s4-bodyContainer {
     padding: 0;
   }
 
@@ -20,22 +22,23 @@
     border: none;
     padding: 0;
   }
+
   #entries-pane-titles {
     font-weight: bold;
     padding-left: 15px;
   }
-  
+
   /*END SP page styles*/
   /*START phonebook styles*/
-  
+
   /*START Header*/
-  
-  #phonebook-header > h1 {
+
+  #phonebook-header>h1 {
     font-weight: bold;
     display: inline;
     margin: auto;
   }
-  
+
   #phonebook-load-spinner {
     font-size: 2em;
     text-align: center;
@@ -43,7 +46,8 @@
     height: 0;
     top: 200px;
   }
-  #phonebook-load-spinner div{
+
+  #phonebook-load-spinner div {
     color: #fff;
     background-color: #0072C6;
     font-size: 1.2em;
@@ -53,45 +57,50 @@
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 2px 8px 2px rgba(0, 0, 0, 0.3);
-}
-  
+  }
+
   .is-loaded {
     font-size: 0em;
     opacity: 0;
     transition-duration: 0.5s;
     transition-timing-function: ease-out;
     -ms-transform: scale(0);
+    -moz-transform: scale(0);
+    -webkit-transform: scale(0);
+    -o-transform: scale(0);
     transform: scale(0);
   }
 
-  #top-options-buttons{
+  #top-options-buttons {
     font-size: 1.2em;
   }
 
-  #top-options-buttons > button{
+  #top-options-buttons>button {
     font-size: 1.2em;
     padding: 2px;
     min-width: 180px;
   }
 
-  #top-options-buttons > input{
+  #top-options-buttons>input {
     width: 170px;
   }
-  
+
   /*END phonebook header*/
   /*START phonebook wrapper*/
   /*contains pane, pagination, alpha buttons*/
-  
+
   #phonebook-wrapper,
   #phonebook-header {
     text-align: center;
     transition-duration: 0.5s;
     transition-timing-function: ease-in;
   }
-  
+
   /*START entry pane*/
 
-  #entries-pane, #filtered-entries-pane, #dir-entries-pane {
+  #entries-pane,
+  #filtered-entries-pane,
+  #dir-entries-pane {
     background-color: #eee;
     max-height: 435px;
     overflow-x: hidden;
@@ -103,15 +112,15 @@
     padding-bottom: 10px;
     margin-bottom: 10px;
   }
-  
-  #entries-pane-titles > ul {
+
+  #entries-pane-titles>ul {
     text-align: left;
     list-style: none;
     margin: auto;
     padding: 10px 14px 0 0;
     width: 1015px;
   }
-  
+
   .contact {
     text-align: left;
     list-style: none;
@@ -119,7 +128,7 @@
     padding: 10px 2px;
     width: 1015px;
   }
-  
+
   /* adds sub-directorate title to 1st entry of sub-dir */
   /* for use in filter by directorate */
   .contact.beginning::before {
@@ -131,7 +140,7 @@
     font-size: 1.2em;
     margin: 0 0 0 0 -5px;
   }
-  
+
   .contact:nth-child(even) {
     background-color: #fff;
   }
@@ -143,13 +152,13 @@
   .contact:last-of-type {
     box-shadow: 0px 4px 2px #ccc;
   }
-  
+
   .contact:hover {
     background-color: #e6f2fa;
     outline: 1px solid #92c0e0;
-    
+
   }
-  
+
   .contact:active {
     background-color: #92c0e0;
     outline: 1px solid #92c0e0;
@@ -157,7 +166,7 @@
   }
 
   .contact li,
-  #entries-pane-titles > ul > li {
+  #entries-pane-titles>ul>li {
     display: inline-block;
     width: 115px;
   }
@@ -165,35 +174,35 @@
   .contact li:nth-child(1),
   .contact li:nth-child(4),
   .contact li:nth-child(7),
-  #entries-pane-titles > ul > li:nth-child(1),
-  #entries-pane-titles > ul > li:nth-child(4),
-  #entries-pane-titles > ul > li:nth-child(7) {
+  #entries-pane-titles>ul>li:nth-child(1),
+  #entries-pane-titles>ul>li:nth-child(4),
+  #entries-pane-titles>ul>li:nth-child(7) {
     width: 75px;
   }
-  
+
   .contact li:nth-child(3) {
     font-weight: bold;
   }
 
   .contact li:nth-child(5),
   .contact li:nth-child(6),
-  #entries-pane-titles > ul > li:nth-child(5),
-  #entries-pane-titles > ul > li:nth-child(6) {
+  #entries-pane-titles>ul>li:nth-child(5),
+  #entries-pane-titles>ul>li:nth-child(6) {
     width: 200px;
   }
-  
-  #entries-pane-titles > ul > li:nth-child(7) {
+
+  #entries-pane-titles>ul>li:nth-child(7) {
     text-align: left;
   }
-  
-  #entries-pane > button {
+
+  #entries-pane>button {
     margin-top: 4px;
     box-shadow: 0px 2px 2px #ccc;
   }
-  
+
   /*END entries pane*/
   /*START page/alpha buttons*/
-  
+
   .page-numbers-row,
   .alpha-buttons-row {
     list-style: none;
@@ -210,7 +219,7 @@
     margin: 2px;
     text-align: center;
   }
-  
+
   .page-numbers-row button {
     min-width: 40px;
     margin: 0;
@@ -222,7 +231,7 @@
     box-shadow: none;
   }
 
-  .btn-is-current > button {
+  .btn-is-current>button {
     background-color: none;
     border-radius: 3px;
     border: 2px solid #eee;
@@ -231,25 +240,26 @@
     user-select: none;
   }
 
-  .btn-is-current > button:active {
+  .btn-is-current>button:active {
     border: 1px solid #93abbd;
     box-shadow: none;
   }
 
-  .btn-is-current > button:hover,
-  .btn-is-current > button:active {
+  .btn-is-current>button:hover,
+  .btn-is-current>button:active {
     background-color: white;
   }
 
-  .btn-is-current > button:focus {
+  .btn-is-current>button:focus {
     outline: none;
   }
 
-   /*specificity issue*/
+  /*specificity issue*/
   .page-numbers-row .btn-is-ellipses {
     border: none;
     box-shadow: none;
   }
+
   .btn-is-ellipses button {
     background-color: white;
     border: none;
@@ -257,24 +267,27 @@
     pointer-events: none;
     user-select: none;
   }
-  
+
   .alpha-buttons-row li {
     margin: 1px;
   }
 
   /*specificity issue*/
-  .alpha-buttons-row .alpha-label{
+  .alpha-buttons-row .alpha-label {
     font-size: 1em;
-    box-shadow: none;    
+    box-shadow: none;
   }
+
   .alpha-buttons-row button {
-    min-width: 22px; /*SP override*/
+    min-width: 22px;
+    /*SP override*/
     width: 22px;
     margin: 0;
     padding: 2px 4px;
   }
 
-  .alpha-buttons-row, .alpha-label {
+  .alpha-buttons-row,
+  .alpha-label {
     font-size: 1em;
     font-weight: normal;
     box-shadow: none;
@@ -284,7 +297,8 @@
   /*END page/alpha buttons*/
   /*START contact modal*/
 
-  .contact-modal, .contact-modal * {
+  .contact-modal,
+  .contact-modal * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -293,10 +307,10 @@
   .contact-modal hr {
     border: 0;
     height: 1px;
-    background-image: linear-gradient(to right, rgba(171, 182 ,193, 0.5), rgba(171, 182 ,193, 0.75), rgba(171, 182 ,193, 0.5));
+    background-image: linear-gradient(to right, rgba(171, 182, 193, 0.5), rgba(171, 182, 193, 0.75), rgba(171, 182, 193, 0.5));
   }
 
-  .contact-info{
+  .contact-info {
     border-radius: 10px 50px 0 0;
     width: 100%;
     margin: auto;
@@ -309,51 +323,51 @@
     box-shadow: 0 2px 8px 2px rgba(0, 0, 0, 0.4);
   }
 
-  .contact-info-details{
+  .contact-info-details {
     font-size: 1.4em;
     padding: 10px;
   }
 
-  .contact-info-personal{
+  .contact-info-personal {
     max-width: 420px;
     overflow-wrap: break-word;
     display: flex;
     flex-flow: row nowrap;
   }
 
-  .contact-info-org{
+  .contact-info-org {
     font-size: .8em;
-    margin: 10px; 
+    margin: 10px;
   }
 
-  .rank{
+  .rank {
     justify-content: center;
     margin: 0 10px 0 10px;
     padding-right: 10px;
     border-right: 2px solid #59718f;
   }
 
-  .contact-info-logo{
+  .contact-info-logo {
     flex-grow: 0;
     min-width: 100px;
     width: 100px;
     height: 100px;
     margin: 10px 10px 0 10px;
   }
-  
-  .contact-info-logo > img{
+
+  .contact-info-logo>img {
     width: auto;
     max-height: 100%;
   }
 
-  .contact-info-details{
-    background-color:#2c4d75;
+  .contact-info-details {
+    background-color: #2c4d75;
     border-radius: 0 50px 0 0;
     flex-grow: 2;
     text-align: left;
   }
 
-  .contact-channels{
+  .contact-channels {
     display: flex;
     flex-flow: row nowrap;
     font-size: 1.2em;
@@ -361,33 +375,35 @@
     margin-bottom: 20px;
   }
 
-  .secure{
+  .secure {
     border-radius: 0 0 10px 0;
   }
 
-  .unsecure{
+  .unsecure {
     border-radius: 0 0 0 10px;
   }
 
-  .unsecure, .secure{
+  .unsecure,
+  .secure {
     flex-flow: 0;
     width: 260px;
     background-color: rgba(242, 242, 242, 0.7);
     padding: 5px 10px;
     box-shadow: 0 2px 8px 2px rgba(0, 0, 0, 0.3);
   }
-  
-  .unsecure h3, .secure h3{
+
+  .unsecure h3,
+  .secure h3 {
     font-weight: bold;
   }
 
-  .contact-channels ul{
+  .contact-channels ul {
     list-style: none;
     margin: auto;
     text-align: left;
   }
 
-  .contact-channels li:nth-child(2){
+  .contact-channels li:nth-child(2) {
     font-size: 0.7em;
     word-wrap: break-word;
   }
@@ -402,7 +418,8 @@
     min-height: 435px;
     max-height: 100%;
     position: fixed;
-    z-index: 1002; /*megamenu conflict @1000*/
+    z-index: 1002;
+    /*megamenu conflict @1000*/
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -424,10 +441,12 @@
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1001; /*megamenu conflict*/
+    z-index: 1001;
+    /*megamenu conflict*/
     transition-duration: 0.5s;
     background: rgba(0, 0, 0, 0.6);
   }
+
   .contact-modal-inner {
     position: absolute;
     top: 0;
@@ -440,7 +459,7 @@
     background: rgba(220, 230, 242, 0.7);
   }
 
-  .contact-modal-inner-edit{
+  .contact-modal-inner-edit {
     background: rgba(220, 230, 242, 0.7);
     display: -ms-grid;
     display: grid;
@@ -456,27 +475,28 @@
     padding: 10px 50px 5px 50px;
     text-align: left;
   }
-  
-  .contact-modal-inner-edit input{
+
+  .contact-modal-inner-edit input {
     width: 90%;
   }
-  
-  .contact-modal-inner-edit > div{
+
+  .contact-modal-inner-edit>div {
     margin-bottom: 4px;
   }
-  
-  .contact-modal-inner-edit > div:last-child{
+
+  .contact-modal-inner-edit>div:last-child {
     margin-bottom: 0;
   }
 
   .contact-modal .close-button {
-    min-width: 0; /*SP override*/
+    min-width: 0;
+    /*SP override*/
     font-family: "Arial", sans-serif;
     border-radius: 50%;
     position: absolute;
     z-index: 1;
-    top:6px;
-    right:6px;
+    top: 6px;
+    right: 6px;
     border: 1px solid #223b5a;
     background-image: linear-gradient(#5686bf, #223b5a);
     color: white;
@@ -485,11 +505,11 @@
     box-shadow: 0 2px 8px 1px rgba(0, 0, 0, 0.3);
   }
 
-  .contact-modal .close-button:hover{
+  .contact-modal .close-button:hover {
     background-image: linear-gradient(#3e6ca5, #142335);
   }
 
-  .contact-modal .close-button:active{
+  .contact-modal .close-button:active {
     background-image: linear-gradient(#7ba0cd, #30547f);
   }
 
@@ -508,18 +528,21 @@
     width: 93.4%;
     box-shadow: 0 2px 8px 1px rgba(0, 0, 0, 0.3);
   }
-  
+
   .edit-contact:hover {
     background-image: linear-gradient(#3e6ca5, #142335);
   }
+
   .edit-contact:active {
     background-image: linear-gradient(#7ba0cd, #30547f);
   }
+
   /* IE garbage for grid */
   .col-1 {
     -ms-grid-column: 1;
     grid-column: 1;
   }
+
   .col-2 {
     -ms-grid-column: 2;
     grid-column: 2;
@@ -527,134 +550,165 @@
 
   .row-1 {
     -ms-grid-row: 1;
-    grid-row:1;
+    grid-row: 1;
   }
+
   .row-2 {
     -ms-grid-row: 2;
-    grid-row:2;
+    grid-row: 2;
   }
+
   .row-3 {
     -ms-grid-row: 3;
-    grid-row:3;
+    grid-row: 3;
   }
+
   .row-4 {
     -ms-grid-row: 4;
-    grid-row:4;
+    grid-row: 4;
   }
+
   .row-5 {
     -ms-grid-row: 5;
-    grid-row:5;
+    grid-row: 5;
   }
+
   .row-6 {
     -ms-grid-row: 6;
-    grid-row:6;
+    grid-row: 6;
   }
+
   .row-7 {
     -ms-grid-row: 7;
-    grid-row:7;
+    grid-row: 7;
   }
+
   .row-8 {
     -ms-grid-row: 8;
-    grid-row:8;
+    grid-row: 8;
   }
+
   .row-9 {
     -ms-grid-row: 9;
-    grid-row:9;
+    grid-row: 9;
   }
+
   .row-10 {
     -ms-grid-row: 10;
-    grid-row:10;
+    grid-row: 10;
   }
+
   .row-11 {
     -ms-grid-row: 11;
-    grid-row:11;
+    grid-row: 11;
   }
+
   .row-12 {
     -ms-grid-row: 12;
-    grid-row:12;
+    grid-row: 12;
   }
-  
-  .modalEditButtons{
-      font-size: 1.2rem;
-      -ms-grid-column-span: 2;
-      grid-column-start: 1;
-      grid-column-end: 3;
-      padding: 3px 0;
-      text-align: center;
+
+  .modalEditButtons {
+    font-size: 1.2rem;
+    -ms-grid-column-span: 2;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    padding: 3px 0;
+    text-align: center;
   }
-  
-  .confirm-update, .cancel-edit, .delete-contact{
+
+  .confirm-update,
+  .cancel-edit,
+  .delete-contact {
     border-radius: 5px;
     box-shadow: 0 2px 8px 1px rgba(0, 0, 0, 0.3);
     font-size: 1em;
     padding: 10px;
     transition-duration: 0.05s;
-  } 
-  
+  }
+
   .confirm-update {
     color: #fff;
     background-image: linear-gradient(#5686bf, #223b5a);
   }
+
   .confirm-update:hover {
     background-image: linear-gradient(#3e6ca5, #142335);
   }
+
   .confirm-update:active {
     background-image: linear-gradient(#7ba0cd, #30547f);
     -webkit-transform: scale(1.05);
-            transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -o-transform: scale(1.05);
+    transform: scale(1.05);
   }
+
   .confirm-update:focus {
     border: 1px solid #0d1723;
   }
-  
-  .cancel-edit{
+
+  .cancel-edit {
     background-image: linear-gradient(whitesmoke, darkgray);
   }
+
   .cancel-edit:hover {
     background-image: linear-gradient(gainsboro, #8f8f8f);
   }
+
   .cancel-edit:active {
     background-image: linear-gradient(white, #c2c2c2);
     -webkit-transform: scale(1.05);
-            transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -o-transform: scale(1.05);
+    transform: scale(1.05);
   }
-  
+
   .delete-contact {
     background-image: linear-gradient(#ff8983, #e90d00);
     color: #fff;
     margin-right: 50px;
   }
+
   .delete-contact:hover {
     background-image: linear-gradient(#ff5950, #b60a00);
   }
+
   .delete-contact:active {
     background-image: linear-gradient(#ffbab6, #ff291d);
     -webkit-transform: scale(1.05);
-            transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -o-transform: scale(1.05);
+    transform: scale(1.05);
   }
+
   .delete-contact:focus {
     border: 1px solid #9c0900;
   }
-  
-  .contact-modal-edit-title{
+
+  .contact-modal-edit-title {
     position: absolute;
     top: 10px;
     margin-left: 15px;
   }
 
-  .more-info{
+  .more-info {
     display: inline-block;
     width: 28px;
     text-align: center;
   }
-  .more-info:hover{
+
+  .more-info:hover {
     transform: scale(1.3);
     transition-duration: 0.2s;
   }
-  
+
   .more-info:hover::before {
     content: "";
-    padding:  0;
+    padding: 0;
     position: absolute;
     border: 8px solid white;
     margin: 0;
@@ -663,8 +717,8 @@
     transform: rotate(45deg);
     z-index: 1;
   }
-  
-  .more-info:hover::after{
+
+  .more-info:hover::after {
     content: "Auto-complete field. To change, first delete content in field then type in a new directorate or wing.";
     box-shadow: 0 2px 8px 1px rgba(0, 0, 0, 0.3);
     top: 30px;
@@ -676,52 +730,59 @@
     position: absolute;
     width: 250px;
   }
-  
+
   .clear-input {
     font-family: "Arial", sans-serif;
     font-size: 1em;
-    min-width: 0; /*SP override*/
+    min-width: 0;
+    /*SP override*/
     border-radius: 50%;
     border: 0;
     background-color: #a6a6a6;
     padding: 1px 6px;
     box-shadow: 0 2px 8px 1px rgba(0, 0, 0, 0.2)
   }
-  
-  .clear-input:hover{
+
+  .clear-input:hover {
     background-color: #ff9a94;
     transition-duration: 0.2s;
   }
 
-  .clear-input:focus{
-    outline-color: rgba(255,255,255, 0.1);
+  .clear-input:focus {
+    outline-color: rgba(255, 255, 255, 0.1);
   }
-  
+
   .closed {
     display: none;
     background: rgba(0, 0, 0, 0);
   }
-  
-  .hidden{
-    opacity: 0;
-  }
-  
-  /*END contact modal*/
-  /*START VUE.JS transition styles*/
-  
-  .fade-enter-active, .fade-leave-active {
-    transition: opacity .2s;
-  }
-  .fade-enter, .fade-leave-to {
+
+  .hidden {
     opacity: 0;
   }
 
-/*reserved for options fields*/
-  .scale-enter-active, .scale-leave-active {
-  transition: opacity .5s;
+  /*END contact modal*/
+  /*START VUE.JS transition styles*/
+
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity .2s;
   }
-  .scale-enter, .scale-leave-to {
-  opacity: 0;
+
+  .fade-enter,
+  .fade-leave-to {
+    opacity: 0;
+  }
+
+  /*reserved for options fields*/
+  .scale-enter-active,
+  .scale-leave-active {
+    transition: opacity .5s;
+  }
+
+  .scale-enter,
+  .scale-leave-to {
+    opacity: 0;
   }
 
   /*END VUE.JS transition styles*/
@@ -819,7 +880,8 @@
           &lt Previous
         </button>
       </li>
-      <li v-for="pageButton in createPageButtons" v-bind:class="{'btn-is-current':(pageButton === currentPage), 'btn-is-ellipses':(pageButton==='...')}">
+      <li v-for="pageButton in createPageButtons"
+        v-bind:class="{'btn-is-current':(pageButton === currentPage), 'btn-is-ellipses':(pageButton==='...')}">
         <button type="button" v-on:click="changePage(pageButton)">
           {{ pageButton }}
         </button>
@@ -840,7 +902,8 @@
     </ul>
   </div>
   <transition name="fade">
-    <div class="contact-modal-overlay" id="contact-modal-overlay" v-if="modalOpen" v-on:click="cancelModalByOverlay"></div>
+    <div class="contact-modal-overlay" id="contact-modal-overlay" v-if="modalOpen" v-on:click="cancelModalByOverlay">
+    </div>
   </transition>
   <transition name="fade">
     <div class="contact-modal" id="contact-modal" v-if="modalOpen">
@@ -919,7 +982,8 @@
             <datalist id="dirs">
               <option v-for="dir in findDirectorates">{{ dir }}</option>
             </datalist>
-            <button type="button" class="clear-input" v-on:click="(modalEntry.directorate = '', modalEntry.sub_x002d_directorate = '')">&#215;</button>
+            <button type="button" class="clear-input"
+              v-on:click="(modalEntry.directorate = '', modalEntry.sub_x002d_directorate = '')">&#215;</button>
           </div>
 
           <div class="col-1 row-7"><span>Sub-directorate: </span></div>
@@ -946,7 +1010,8 @@
 
             <button v-if="!addNew" type="button" class="delete-contact" v-on:click="deleteContact(modalEntry)">Delete
               contact</button>
-            <button v-if="!addNew" type="button" class="cancel-edit" v-on:click="cancelEdit(modalEntry.absoluteIndex)">Cancel
+            <button v-if="!addNew" type="button" class="cancel-edit"
+              v-on:click="cancelEdit(modalEntry.absoluteIndex)">Cancel
               edit</button>
             <button v-if="!addNew" type="button" class="confirm-update" v-on:click="submitModalEdit(modalEntry)">Confirm
               update</button>
