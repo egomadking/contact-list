@@ -20,5 +20,5 @@ yarn-error.log*
 *.sln
 *.sw?
 
-/src/env.js
+/src/secrets.js
 SECRETS.md
