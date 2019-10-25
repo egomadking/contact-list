@@ -1,6 +1,9 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Home from './views/Home.vue';
+import Add from '@/views/Add.vue';
+import Browse from './views/Browse.vue';
+import Edit from '@/views/Edit.vue';
+import Login from '@/views/Login.vue';
 
 Vue.use(Router);
 
@@ -8,9 +11,24 @@ export default new Router({
   mode: 'history',
   routes: [
     {
+      path: '/add',
+      name: 'add',
+      component: Add
+    },
+    {
       path: '/',
-      name: 'home',
-      component: Home
+      name: 'browse',
+      component: Browse
+    },
+    {
+      path: '/edit',
+      name: 'edit',
+      component: Edit
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: Login
     },
     {
       path: '/about',
