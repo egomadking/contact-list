@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Login</h1>
+    <h1>Login to contact-list</h1>
     <LogOn />
   </div>
 </template>
